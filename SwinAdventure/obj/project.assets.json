@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\OneDrive - student.newinti.edu.my\\BCSSUT\\Semester 2\\COS20007 Object-Oriented Programming\\Projects\\SwinAdventure\\SwinAdventure.csproj",
+      "projectUniqueName": "C:\\Users\\User\\OneDrive - student.newinti.edu.my\\BCSSUT\\Semester 2\\COS20007 Object-Oriented Programming\\Projects\\SwinAdventure\\SwinAdventure\\SwinAdventure.csproj",
       "projectName": "SwinAdventure",
-      "projectPath": "C:\\Users\\User\\OneDrive - student.newinti.edu.my\\BCSSUT\\Semester 2\\COS20007 Object-Oriented Programming\\Projects\\SwinAdventure\\SwinAdventure.csproj",
+      "projectPath": "C:\\Users\\User\\OneDrive - student.newinti.edu.my\\BCSSUT\\Semester 2\\COS20007 Object-Oriented Programming\\Projects\\SwinAdventure\\SwinAdventure\\SwinAdventure.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\OneDrive - student.newinti.edu.my\\BCSSUT\\Semester 2\\COS20007 Object-Oriented Programming\\Projects\\SwinAdventure\\obj\\",
+      "outputPath": "C:\\Users\\User\\OneDrive - student.newinti.edu.my\\BCSSUT\\Semester 2\\COS20007 Object-Oriented Programming\\Projects\\SwinAdventure\\SwinAdventure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

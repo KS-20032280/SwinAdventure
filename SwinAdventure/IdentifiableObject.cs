@@ -17,17 +17,7 @@ namespace SwinAdventure
             }
         }
 
-        public bool AreYou(string id)
-        {
-            foreach(string identifier in _identifiers)
-            {
-                if (identifier == id.ToLower())
-                    return true;
-            }
-            //if the loop is over and nothing matches, return false
-            return false;
-        }
-
+        #region properties
         public string FirstId 
         {
             get
@@ -42,6 +32,18 @@ namespace SwinAdventure
                     return _identifiers.First();
                 }
             }
+        }
+        #endregion
+
+        public bool AreYou(string id)
+        {
+            foreach (string identifier in _identifiers)
+            {
+                if (identifier == id.ToLower())
+                    return true;
+            }
+            //if the loop is over and nothing matches, return false
+            return false;
         }
 
         public void AddIdentifier(string id)
