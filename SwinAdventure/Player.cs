@@ -10,11 +10,11 @@
         }
 
         #region property
-        public override string LongDescription
+        public override string FullDescription
         { 
             get
             {
-                return $"You are {base.LongDescription}.\n" +
+                return $"You are {base.FullDescription}.\n" +
                     $"You are carrying\n" +
                     _inventory.ItemList;
             } 

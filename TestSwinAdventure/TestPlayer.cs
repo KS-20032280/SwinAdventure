@@ -64,7 +64,7 @@ namespace TestSwinAdventure
             result += "You are John Smith.\n";
             result += "You are carrying\n";
             result += testItemList;
-            Assert.AreEqual(result, player.LongDescription);
+            Assert.AreEqual(result, player.FullDescription);
         }
     }
 }

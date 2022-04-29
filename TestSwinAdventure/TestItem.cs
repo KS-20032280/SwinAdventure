@@ -38,7 +38,7 @@ namespace TestSwinAdventure
         public void TestFullDescription()
         {
             //returns the item description
-            Assert.AreEqual(itemDesc, item.LongDescription);
+            Assert.AreEqual(itemDesc, item.FullDescription);
         }
     }
 }

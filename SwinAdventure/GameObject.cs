@@ -17,7 +17,7 @@
         public string ShortDescription
         { get { return $"{_name} ({FirstId})"; } }
 
-        public virtual string LongDescription
+        public virtual string FullDescription
         { get { return _description; } }
         #endregion
     }
