@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SwinAdventure
+﻿namespace SwinAdventure
 {
-    public class Bag : Item
+    public class Bag : Item, IHaveInventory
     {
         private Inventory _inventory;
 
