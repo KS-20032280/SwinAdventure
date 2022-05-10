@@ -3,10 +3,12 @@
     public class Player : GameObject, IHaveInventory
     {
         private Inventory _inventory;
+        private Location _currentLocation;
 
         public Player(string name, string desc) : base(new string[] {"me", "inventory"}, name, desc)
         { 
             _inventory = new Inventory();
+            _currentLocation = new Location(new string[] {"hallway"}, "Hallway", "This is a long well lit hallway.");
         }
 
         #region property
@@ -22,6 +24,12 @@
 
         public Inventory Inventory
         { get { return _inventory; } }
+
+        public Location CurrentLocation
+        {
+            get { return _currentLocation; }
+            set { _currentLocation = value; }
+        }
         #endregion
 
         public GameObject Locate(string id)
@@ -31,8 +39,18 @@
             {
                 return this;
             }
-            //else return the item fetched from the inventory, will return null if the item does not exist
-            return _inventory.Fetch(id);
+            //fetch item from inventory
+            Item foundItem = _inventory.Fetch(id);
+            //return item in invetory if it can be found
+            if(foundItem != null)
+            {
+                return foundItem;
+            }
+            else
+            {
+                //if item cannot be found in inventory(foundItem == null), find it in the current location
+                return _currentLocation.Locate(id);
+            }
         }
     }
 }

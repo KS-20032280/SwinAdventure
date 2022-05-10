@@ -13,7 +13,7 @@ namespace SwinAdventure
             {
                 return "I don't know how to " + text[0];
             }
-            if(text.Length != 3 && text.Length != 5)
+            if(text.Length != 3 && text.Length != 5 && text.Length != 1)
             {
                 return "I don't know how to look at that";
             }
@@ -21,16 +21,22 @@ namespace SwinAdventure
             {
                 return "Error in look input";
             }
-            if(text[1] != "at")
+            if(text.Length > 1)
             {
-                return "What do you want to look at?";
+                if(text[1] != "at")
+                    return "What do you want to look at?";
             }
             if(text.Length == 5 && text[3] != "in")
             {
                 return "What do you want to look in?";
             }
+            //if text only contains ["look"], look at the location
+            if(text.Length == 1)
+            {
+                return p.CurrentLocation.FullDescription;
+            }
             //if there are 3 elements, the container is the player
-            if(text.Length == 3)
+            else if(text.Length == 3)
             {
                 //set player as the container
                 container = p;
