@@ -1,4 +1,6 @@
-﻿namespace SwinAdventure
+﻿using System.Collections.Generic;
+
+namespace SwinAdventure
 {
     public class Player : GameObject, IHaveInventory
     {
@@ -8,7 +10,6 @@
         public Player(string name, string desc) : base(new string[] {"me", "inventory"}, name, desc)
         { 
             _inventory = new Inventory();
-            _currentLocation = new Location(new string[] {"hallway"}, "Hallway", "This is a long well lit hallway.");
         }
 
         #region property
@@ -48,6 +49,8 @@
             }
             else
             {
+                //return null if player does not exist in a location
+                if (_currentLocation == null) return null;
                 //if item cannot be found in inventory(foundItem == null), find it in the current location
                 return _currentLocation.Locate(id);
             }

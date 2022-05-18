@@ -19,6 +19,7 @@ namespace TestSwinAdventure
             player = new Player(playerName, playerDescription);
             player.Inventory.Put(shovel);
             player.Inventory.Put(sword);
+            player.CurrentLocation = new Location(new string[] { "room" }, "a room", "This is a room", null);
 
             testItemList = string.Empty;
             testItemList += "\ta shovel (shovel)\n";

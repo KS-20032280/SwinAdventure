@@ -1,12 +1,17 @@
-﻿namespace SwinAdventure
+﻿using System.Collections.Generic;
+
+namespace SwinAdventure
 {
     public class Location : GameObject, IHaveInventory
     {
         private Inventory _inventory;
 
-        public Location(string[] idents, string name, string description) : base(idents, name, description)
+        private List<Path> _paths;
+
+        public Location(string[] idents, string name, string description, List<Path> paths) : base(idents, name, description)
         {
             _inventory = new Inventory();
+            _paths = paths ?? new List<Path>();
         }
 
         #region properties
@@ -18,8 +23,26 @@
         {
             get
             {
-                return "You are in the " + Name + ".\n" + base.FullDescription + "\nIn this room you can see:\n" + _inventory.ItemList;
+                string output = "";
+                output += "You are in a " + Name + ".\n" + base.FullDescription + "\n";
+                if(_paths.Count > 0)
+                {
+                    foreach (Path p in _paths)
+                    {
+                        output += "There are " + p.Name + " to the " + p.FirstId + "\n";
+                    }
+                }
+                if (_inventory.ItemList.Length > 0)
+                {
+                    output += "In this room you can see:\n";
+                    output += _inventory.ItemList;
+                }
+                return output;
             }
+        }
+        public List<Path> Paths
+        {
+            get { return _paths; }
         }
         #endregion
 
@@ -33,6 +56,18 @@
             {
                 return _inventory.Fetch(id);
             }
+        }
+
+        public Path GetPath(string id)
+        {
+            foreach (Path p in _paths)
+            {
+                if (p.AreYou(id))
+                {
+                    return p;
+                }
+            }
+            return null;
         }
     }
 }
