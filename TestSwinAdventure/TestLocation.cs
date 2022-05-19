@@ -46,7 +46,7 @@ namespace TestSwinAdventure
         public void TestLookAtLocation()
         {
             LookCommand command = new LookCommand();
-            string expectedOutput = "You are in a garden.\nThere are many small shrubs and flowers growing from well tended garden beds.\nIn this room you can see:\n\ta gem (gem)\n";
+            string expectedOutput = "You are in a garden.\nThere are many small shrubs and flowers growing from well tended garden beds.\nIn this room you can see:\n\ta gem (gem)";
             Assert.AreEqual(expectedOutput, command.Execute(player, new string[] { "look" }));
         }
     }

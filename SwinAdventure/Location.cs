@@ -34,7 +34,7 @@ namespace SwinAdventure
                 }
                 if (_inventory.ItemList.Length > 0)
                 {
-                    output += "In this room you can see:\n";
+                    output += "In this room you can see:";
                     output += _inventory.ItemList;
                 }
                 return output;
@@ -44,6 +44,7 @@ namespace SwinAdventure
         {
             get { return _paths; }
         }
+
         #endregion
 
         public GameObject Locate(string id)

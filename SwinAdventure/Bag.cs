@@ -22,7 +22,7 @@
         }
 
         public override string FullDescription
-        { get { return "In the " + Name + " you see: \n" + _inventory.ItemList; } }        
+        { get { return "In the " + Name + " you see: " + _inventory.ItemList; } }        
 
         #region properties
         public Inventory Inventory

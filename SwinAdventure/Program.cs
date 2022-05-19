@@ -15,44 +15,11 @@ namespace SwinAdventure
         static void Main(string[] args)
         {
             InitializeGame();
-            string command = "";
-            //print "Welcome to SwinAdventure!" at the start of the game.
-            Console.WriteLine("Welcome to SwinAdventure!");
-            while (command != "quit")
+            while (true)
             {
-                //prompt for command
                 Console.Write("Command -> ");
-                command = Console.ReadLine();
-                //if there is no command, display error message and prompt for command again
-                if (string.IsNullOrEmpty(command))
-                {
-                    Console.WriteLine("\nPlease enter a command");
-                    continue;
-                }
-                //split the command into an array of words
-                string[] commandArray = command.Split(' ');
-                //check the first word of the command, it will create different command objects
-                switch(commandArray[0])
-                {
-                    case "look":
-                        //create a new look command
-                        LookCommand look = new LookCommand();
-                        //execute the command
-                        Console.WriteLine("\n" + look.Execute(player, commandArray));
-                        break;
-                    case "move":
-                        //create a new move command
-                        MoveCommand move = new MoveCommand();
-                        //execute the command
-                        Console.WriteLine("\n" + move.Execute(player, commandArray));
-                        break;
-                    case "quit":
-                        Console.WriteLine("Bye!");
-                        return;
-                    default:
-                        Console.WriteLine("I don't understand " + command);
-                        break;
-                }
+                string command = Console.ReadLine();
+                Console.WriteLine("\n" + CommandProcessor.ProcessCommand(player, command));
             }
         }
 
@@ -86,6 +53,7 @@ namespace SwinAdventure
             hallway.Inventory.Put(sword);
             player.Inventory.Put(bag);
             bag.Inventory.Put(shovel);
+            Console.WriteLine("Welcome to SwinAdventure!");
         }
     }
 }

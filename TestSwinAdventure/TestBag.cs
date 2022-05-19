@@ -40,7 +40,7 @@ namespace TestSwinAdventure
         [Test]
         public void TestBagFullDescription()
         {
-            Assert.AreEqual("In the " + bagName + " you see: \n" + bag.Inventory.ItemList, bag.FullDescription);
+            Assert.AreEqual("In the " + bagName + " you see: " + bag.Inventory.ItemList, bag.FullDescription);
         }
 
         [Test]

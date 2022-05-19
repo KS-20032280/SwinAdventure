@@ -30,7 +30,7 @@ namespace TestSwinAdventure
         public void TestLookAtMe()
         {
             //returns players full description when looking at inventory
-            Assert.AreEqual($"You are {playerDesc}.\nYou are carrying\n\t{bagName} (bag)\n", command.Execute(player, new string[] { "look", "at", "inventory" }));
+            Assert.AreEqual($"You are {playerDesc}.\nYou are carrying\n\t{bagName} (bag)", command.Execute(player, new string[] { "look", "at", "inventory" }));
         }
 
         [Test]

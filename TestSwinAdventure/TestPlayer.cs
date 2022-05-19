@@ -22,8 +22,8 @@ namespace TestSwinAdventure
             player.CurrentLocation = new Location(new string[] { "room" }, "a room", "This is a room", null);
 
             testItemList = string.Empty;
-            testItemList += "\ta shovel (shovel)\n";
-            testItemList += "\ta sword (sword)\n";
+            testItemList += "\n\ta shovel (shovel)";
+            testItemList += "\n\ta sword (sword)";
         }
 
         [Test]
@@ -63,7 +63,7 @@ namespace TestSwinAdventure
         {
             string result = string.Empty;
             result += "You are John Smith.\n";
-            result += "You are carrying\n";
+            result += "You are carrying";
             result += testItemList;
             Assert.AreEqual(result, player.FullDescription);
         }

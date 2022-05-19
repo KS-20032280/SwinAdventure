@@ -23,7 +23,7 @@ namespace SwinAdventure
                 string result = "";
                 foreach(Item item in _items)
                 {
-                    result += $"\t{item.ShortDescription}\n";
+                    result += $"\n\t{item.ShortDescription}";
                 }
                 return result;
             } 

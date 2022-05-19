@@ -20,8 +20,8 @@ namespace TestSwinAdventure
             inventory.Put(sword);
 
             testItemList = string.Empty;
-            testItemList += $"\ta shovel (shovel)\n";
-            testItemList += $"\ta sword (sword)\n";
+            testItemList += $"\n\ta shovel (shovel)";
+            testItemList += $"\n\ta sword (sword)";
         }
 
         [Test]
@@ -53,7 +53,7 @@ namespace TestSwinAdventure
             //Returns the item, and the item is no longer in the inventory.
             Assert.AreEqual(sword, inventory.Take("sword"));
             //checks inventory, it should only have shovel inside
-            Assert.AreEqual("\ta shovel (shovel)\n", inventory.ItemList);
+            Assert.AreEqual("\n\ta shovel (shovel)", inventory.ItemList);
         }
 
         [Test]
